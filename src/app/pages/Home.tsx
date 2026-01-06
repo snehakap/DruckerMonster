@@ -24,7 +24,7 @@ export function Home() {
   const topSellers = [
     {
       name: 'Brady M610 Etikettendrucker',
-      image: 'images/brady.jpg',
+      image: 'public/brady.jpg',
       price: '€4.999',
     },
     {
@@ -52,7 +52,7 @@ export function Home() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[65vh] md:min-h-[75vh] lg:min-h-[85vh]">
         <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover z-0">
-  <source src="/video.mp4" type="video/mp4" />
+  <source src="public\video.mp4" type="video/mp4" />
 </video>
         <div className="absolute inset-0 bg-black/35 z-10" />
 
@@ -183,7 +183,7 @@ export function Home() {
       <div className="relative">
         <div className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-200">
           <img
-            src='images/using peinter.jpg'
+            src='public/using peinter.jpg'
             alt="Moderne Drucktechnologie"
             className="w-full h-auto"
             loading="lazy"
