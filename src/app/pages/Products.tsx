@@ -9,7 +9,7 @@ export function Products() {
     {
       name: 'Epson ColorWorks TM-C3500 Farbetikettendrucker',
       brand: 'Epson',
-      image: 'images/EpsonColorWorksTM-C3500.png',
+      image: 'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695779/EpsonColorWorksTM-C3500_yccsta.png',
       description: 'Some Description...',
       price: '€4.999',
       popular: false,
@@ -17,7 +17,7 @@ export function Products() {
     {
       name: 'Brady M610 Etikettendrucker',
       brand: 'Brady',
-      image: 'images/brady.jpg',
+      image: 'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695776/brady_ajv11g.jpg',
       description: 'Some Description...',
       price: '€4.999',
       popular: true,
@@ -25,7 +25,7 @@ export function Products() {
     {
       name: 'Epson ColorWorks C6000Ae Etikettendrucker',
       brand: 'Epson',
-      image: 'images/EpsonColorWorksC6000Ae.jpg',
+      image: 'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695777/EpsonColorWorksC6000Ae_naqsvs.jpg',
       description: 'Some Description...',
       price: '€4.999',
       popular: true,
