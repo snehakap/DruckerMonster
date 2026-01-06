@@ -13,8 +13,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  server: {
-    host: true,
-    allowedHosts: ['.loca.lt'],
+  build: {
+    outDir: 'dist',
   },
 })
