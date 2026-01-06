@@ -52,7 +52,7 @@ export function Home() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[65vh] md:min-h-[75vh] lg:min-h-[85vh]">
         <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover z-0">
-  <source src="public\video.mp4" type="video/mp4" />
+  <source src="https://collection.cloudinary.com/dnbvuwkcb/7227967ed937450d2d3c6a972ae8c4ae" type="video/mp4" />
 </video>
         <div className="absolute inset-0 bg-black/35 z-10" />
 
