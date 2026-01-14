@@ -22,22 +22,25 @@ export function Home() {
 ];
 
   const topSellers = [
-    {
-      name: 'Brady M610 Etikettendrucker',
-      image: 'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695776/brady_ajv11g.jpg',
-      price: '€4.999',
-    },
-    {
-      name: 'Epson ColorWorks C6000Ae Etikettendrucker',
-      image: 'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695777/EpsonColorWorksC6000Ae_naqsvs.jpg',
-      price: '€4.999',
-    },
-    {
-      name: 'Epson ColorWorks TM-C3500 Farbetikettendrucker',
-      image: 'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695779/EpsonColorWorksTM-C3500_yccsta.png',
-      price: '€4.999',
-    },
-  ];
+  {
+    name: 'Brady M610 Etikettendrucker',
+    image: 'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695776/brady_ajv11g.jpg',
+    price: '€4.999',
+    link: '/products/brady-m610-etikettendrucker',
+  },
+  {
+    name: 'Epson ColorWorks TM-C3500 Farbetikettendrucker',
+    image: 'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695779/EpsonColorWorksTM-C3500_yccsta.png',
+    price: '€4.999',
+    link: '/products/epson-colorworks-tm-c3500',
+  },
+  {
+    name: 'Epson Verbrauchsmaterialien',
+    image: 'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695779/EpsonColorWorksTM-C3500_yccsta.png',
+    price: '€4.999',
+    link: '/products/epson-verbrauchsmaterialien',
+  },
+]
 
   const benefits = [
     'Professional-grade printing solutions',
@@ -50,42 +53,84 @@ export function Home() {
     <div className="min-h-screen bg-gradient-to-b from-white via-emerald-50/30 to-white">
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[65vh] md:min-h-[75vh] lg:min-h-[85vh]">
-        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover z-0">
-  <source src="https://res.cloudinary.com/dnbvuwkcb/video/upload/v1767695331/video_mkyjpu.mp4" type="video/mp4" />
-</video>
-        <div className="absolute inset-0 bg-black/35 z-10" />
+<section className="relative pt-32 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[65vh] md:min-h-[75vh] lg:min-h-[85vh]">
+  
+  {/* Background Video */}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute inset-0 w-full h-full object-cover z-0"
+  >
+    <source
+      src="https://res.cloudinary.com/dnbvuwkcb/video/upload/v1767695331/video_mkyjpu.mp4"
+      type="video/mp4"
+    />
+  </video>
 
-        <div className="relative z-20 max-w-7xl mx-auto h-full flex items-center justify-center">
-          <div className="grid lg:grid-cols-2 gap-12 items-center text-white w-full">
-            <div className="space-y-8 pt-20">
-              <h1 className="text-5xl lg:text-7xl leading-tight">
-                Das Druckerlebnis
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-emerald-400">
-                  Neu definiert
-                </span>
-              </h1>
-              <p className="text-xl text-gray-200 leading-relaxed max-w-xl">
-                Entdecken Sie eine große Auswahl an Etikettendruckern führender Marken, entwickelt für all Ihre Anforderungen.
-              </p>
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-black/35 z-10" />
 
-              <div className="flex flex-wrap gap-4">
-                <Link to="/products" className="group relative px-8 py-4 bg-white text-emerald-700 rounded-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Produkte entdecken</span>
-                  <ArrowRight className="relative w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
-                </Link>
+  {/* Content */}
+  <div className="relative z-20 max-w-7xl mx-auto h-full flex items-center justify-center">
+    <div className="grid lg:grid-cols-2 gap-12 items-center text-white w-full">
+      
+      {/* Text Content */}
+      <div className="space-y-10 pt-32">
+        <h1 className="text-5xl lg:text-7xl leading-tight font-semibold">
+          Das Druckerlebnis
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-emerald-400">
+            Neu definiert
+          </span>
+        </h1>
 
-                <Link to="/contact" className="group px-8 py-4 border-2 border-white text-white rounded-xl hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
-                  Vertrieb kontaktieren
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
-                </Link>
-              </div>
-            </div>
-            <div className="hidden lg:block" />
-          </div>
+        <p className="text-xl text-gray-200 leading-relaxed max-w-xl">
+          Entdecken Sie eine große Auswahl an Etikettendruckern führender Marken,
+          entwickelt für all Ihre Anforderungen.
+        </p>
+
+        {/* Buttons */}
+        <div className="flex flex-wrap gap-6">
+          
+          {/* Primary Button */}
+          <Link
+            to="/products"
+            className="group relative px-9 py-4 bg-white text-[#0b5f3c] rounded-xl
+                       transition-all duration-300 ease-out
+                       hover:-translate-y-2 hover:scale-[1.03]
+                       hover:shadow-[0_20px_40px_rgba(11,95,60,0.35)]
+                       flex items-center gap-2 overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+            <span className="relative font-semibold">Produkte entdecken</span>
+            <ArrowRight className="relative w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+          </Link>
+
+          {/* Secondary Button */}
+          <Link
+            to="/contact"
+            className="group px-9 py-4 border-2 border-white text-white rounded-xl
+                       transition-all duration-300 ease-out
+                       hover:-translate-y-2 hover:scale-[1.03]
+                       hover:border-[#0b5f3c]
+                       hover:bg-[#0b5f3c]/20
+                       hover:shadow-[0_18px_36px_rgba(11,95,60,0.35)]
+                       flex items-center gap-2"
+          >
+            <span className="font-semibold">Vertrieb kontaktieren</span>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+          </Link>
+
         </div>
-      </section>
+      </div>
+
+      {/* Empty column for layout balance */}
+      <div className="hidden lg:block" />
+    </div>
+  </div>
+</section>
+
 
       {/* Features Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
@@ -140,16 +185,16 @@ export function Home() {
     <h3 className="text-xl font-semibold text-gray-900">{item.name}</h3>
     <p className="text-lg text-emerald-700 font-medium">{item.price}</p>
     <Link
-      to="/products"
-      className="inline-flex items-center gap-2 text-[rgb(0,146,82)] hover:bg-gray-100 group-hover:text-emerald-700 transition-colors"
-    >
-      Produkt ansehen
-      <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
-    </Link>
-  </div>
-</div>
-      ))}
+          to={item.link}
+          className="inline-flex items-center gap-2 text-[rgb(0,146,82)] hover:bg-gray-100 group-hover:text-emerald-700 transition-colors"
+        >
+          Produkt ansehen
+          <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+        </Link>
+      </div>
     </div>
+  ))}
+</div>
 
     {/* Button below products */}
     <div className="text-center mt-12">
