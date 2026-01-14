@@ -10,9 +10,6 @@ export function Footer() {
           {/* Company Info */}
           <div className="md:w-2/3">
             <div className="flex items-center gap-3 mb-4">
-              <div className="bg-gradient-to-br from-[rgb(0,146,82)] to-emerald-600 p-2 rounded-xl shadow-lg shadow-emerald-500/30">
-                <Printer className="w-6 h-6 text-white" />
-              </div>
               <div className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
                 DruckerMonster
               </div>
