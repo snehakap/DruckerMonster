@@ -34,7 +34,8 @@ export function Service() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-emerald-50/30 to-white pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-white via-emerald-50/30 to-white pt-44 pb-20 px-4 sm:px-6 lg:px-8">
+
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
