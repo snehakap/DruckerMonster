@@ -23,7 +23,7 @@ const navLinks = [
            {/* Logo */}
   <Link to="/" className="flex items-center gap-3 group">
     <img
-      src="/new logo.png"
+      src="https://res.cloudinary.com/dyhc4jwuo/image/upload/v1768388782/new_logo_vytclt.png"
       alt="DruckerMonster Logo"
       className="h-30 -translate-y-1 translate-x-[-55px] "
     />
