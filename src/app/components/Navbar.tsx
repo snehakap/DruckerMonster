@@ -19,66 +19,63 @@ const navLinks = [
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="bg-gradient-to-br from-[rgb(0,146,82)] to-emerald-600 p-2.5 rounded-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-emerald-500/30">
-              <Printer className="w-7 h-7 text-white" />
-            </div>
-            <div>
-              <div className="text-2xl font-bold tracking-tight bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-  DruckerMonster
-</div>
+        <div className="flex justify-between items-center h-32">
+           {/* Logo */}
+  <Link to="/" className="flex items-center gap-3 group">
+    <img
+      src="/new logo.png"
+      alt="DruckerMonster Logo"
+      className="h-30 -translate-y-1 translate-x-[-55px] "
+    />
+  </Link>
 
-            </div>
-          </Link>
+  {/* DESKTOP NAV */}
+          <div className="hidden md:flex justify-center">
+            <div className="flex items-center gap-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`relative text-lg font-bold transition-colors ${
+                    isActive(link.path)
+  ? 'text-[#5DBB7D]'
+  : 'text-black hover:text-[#5DBB7D]'
+                  }`}
+                >
+                  {link.label}
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`px-5 py-2.5 rounded-xl transition-all relative group ${
-                  isActive(link.path)
-                    ? 'text-[rgb(0,146,82)]'
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-emerald-50'
-                }`}
-              >
-                {link.label}
-                {isActive(link.path) && (
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-gradient-to-r from-transparent via-[rgb(0,146,82)] to-transparent" />
-                )}
-                {!isActive(link.path) && (
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-transparent via-[rgb(0,146,82)] to-transparent group-hover:w-1/2 transition-all duration-300" />
-                )}
-              </Link>
-            ))}
+                  {/* underline */}
+                  {isActive(link.path) && (
+                    <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#5DBB7D] rounded-full" />
+                  )}
+                </Link>
+              ))}
+            </div>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* MOBILE BUTTON */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-gray-600 hover:text-gray-900 hover:bg-emerald-50 rounded-xl transition-all"
+            className="md:hidden justify-self-end p-2 rounded-xl hover:bg-emerald-50 transition"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* MOBILE MENU */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-200 bg-white">
-          <div className="px-4 py-4 space-y-2">
+        <div className="md:hidden border-t bg-white">
+          <div className="px-6 py-4 space-y-2">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block px-4 py-3 rounded-xl transition-all ${
+                className={`block px-5 py-4 rounded-xl text-lg font-bold transition ${
                   isActive(link.path)
-                    ? 'bg-emerald-50 text-[rgb(0,146,82)] border-l-4 border-[rgb(0,146,82)] shadow-sm'
-                    : 'text-gray-600 hover:bg-emerald-50 hover:text-gray-900'
+                    ? 'bg-[#e6f4ee] text-[#0b5f3c] border-l-4 border-[#5DBB7D]'
+                    : 'text-black hover:bg-[#e6f4ee] hover:text-[#0b5f3c]'
                 }`}
               >
                 {link.label}
@@ -88,5 +85,5 @@ const navLinks = [
         </div>
       )}
     </nav>
-  );
+  )
 }
