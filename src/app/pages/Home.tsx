@@ -11,7 +11,7 @@ export function Home() {
   },
   {
     icon: Zap,
-    title: 'Schnelle Lieferung',
+    title: '2-3 Werktagen',
     description: 'Zuverlässige und schnelle Lieferung, in der Regel innerhalb von 2 Werktagen.',
   },
   {
@@ -241,9 +241,6 @@ export function Home() {
         {[
           'Hochwertige Etikettendrucker von vertrauenswürdigen Marken',
           'Schnelle und zuverlässige Lieferung',
-          'Kompetente Beratung und engagierter Kundenservice',
-          'Vor-Ort-Installation und Schulungen',
-          'Reparaturservice für sorgenfreie Wartung'
         ].map((item, index) => (
           <div key={index} className="group flex items-start gap-3 p-4 rounded-xl hover:bg-emerald-50 transition-all duration-300 cursor-pointer">
             <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 group-hover:bg-[rgb(0,146,82)] transition-colors">
@@ -256,13 +253,6 @@ export function Home() {
 
     </div>
 
-    {/* Learn More Link */}
-    <div className="text-center mt-12">
-      <Link to="/service" className="inline-flex items-center gap-2 text-[rgb(0,146,82)] hover:text-emerald-700 transition-colors group">
-        <span>Mehr über unsere Services erfahren</span>
-        <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
-      </Link>
-    </div>
 
   </div>
 </section>
