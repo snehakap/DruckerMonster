@@ -169,75 +169,165 @@ export const products = [
 },
 
   {
-    name: 'Brady M511 Etikettendrucker',
-    slug: 'brady-m511-etikettendrucker',
-    brand: 'Brady',
-    price: '€4.999',
-    popular: false,
+  name: 'Brady M511 Etikettendrucker',
+  slug: 'brady-m511-etikettendrucker',
+  brand: 'Brady',
+  price: '€3.999',
+  popular: false,
 
-    images: [
-      'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695776/brady_ajv11g.jpg',
-      'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695776/brady_ajv11g.jpg',
-    ],
+  images: [
+    'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695776/brady_ajv11g.jpg',
+    'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695776/brady_ajv11g.jpg',
+    'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695776/brady_ajv11g.jpg',
+  ],
 
-    description:
-      'Der Brady M511 ist ein mobiler Etikettendrucker für präzise, professionelle Kennzeichnungen direkt vor Ort.',
+  shortdescription:
+    'Kompakter, robuster mobiler Etikettendrucker für professionelle Kennzeichnungen direkt vor Ort.',
 
-    highlights: [
-      'Kompakt und mobil',
-      'Hohe Druckpräzision',
-      'Einfache Bedienung',
-      'Ideal für Wartung und Service',
-    ],
+  description:
+    'Der Brady M511 ist ein leistungsstarker, mobiler Etikettendrucker für industrielle Kennzeichnungsaufgaben im Feld. Dank Bluetooth-Konnektivität und der Brady Express Labels App lassen sich Etiketten schnell und intuitiv per Smartphone oder Tablet erstellen und drucken. Der Drucker eignet sich ideal für Kabel- und Leitungskennzeichnung, Schaltschrankbeschriftungen, Sicherheits- und Anlagenkennzeichnungen sowie Wartungs- und Serviceeinsätze. Sein robustes Design sorgt für zuverlässige Leistung auch in anspruchsvollen Arbeitsumgebungen.',
 
+  highlights: [
+    'Mobiler Etikettendrucker für den Einsatz vor Ort',
+    'Kompaktes, leichtes und robustes Design',
+    'Bluetooth-Konnektivität für mobiles Drucken',
+    'Drucken direkt über Smartphone oder Tablet',
+    'Kompatibel mit Brady Express Labels App',
+    'Thermotransfer-Drucktechnologie',
+    'Einfarbiger Druck mit hoher Präzision',
+    'Maximale Etikettenbreite: 38,10 mm',
+    'Ideal für Kabel-, Leitungs- und Gerätekennzeichnung',
+    'Einfache Bedienung ohne Tastatur',
+    'USB-C Ladeanschluss',
+    'Leistungsstarker Li-Ion-Akku für mobilen Einsatz',
+  ],
+
+  technicalSpecs: {
+    'Drucktechnologie': 'Thermotransfer',
+    'Farbdruck': 'Einfarbig',
+    'Auflösung': '300 dpi',
+    'Max. Etikettenbreite': '38,10 mm',
+    'Etikettentypen': 'Vorgestanzte Etiketten',
+    'Konnektivität': 'Bluetooth',
+    'Betriebsarten': 'Mobiles Drucken über App',
+    'Akku': 'Integrierter Li-Ion-Akku',
+    'Ladeanschluss': 'USB-C',
+    'Software': 'Brady Express Labels App (Android & iOS)',
+    'Anwendungsbereiche':
+      'Elektrik, Daten- und Telekommunikation, Wartung und Service, Anlagenkennzeichnung, Kabel- und Leitungsbeschriftung',
   },
+
+  youtubeIds: [
+    'cRdBrTqeHik',
+  ],
+}
+,  
 
   {
-    name: 'Brady M611 Etikettendrucker',
-    slug: 'brady-m611-etikettendrucker',
-    brand: 'Brady',
-    price: '€4.999',
-    popular: false,
+  name: 'Brady M611 Etikettendrucker',
+  slug: 'brady-m611-etikettendrucker',
+  brand: 'Brady',
+  price: '€4.299',
+  popular: false,
 
-    images: [
-      'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695776/brady_ajv11g.jpg',
-      'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695776/brady_ajv11g.jpg',
-    ],
+  images: [
+    'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695776/brady_ajv11g.jpg',
+    'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695776/brady_ajv11g.jpg',
+    'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695776/brady_ajv11g.jpg',
+  ],
 
-    description:
-      'Der Brady M611 bietet leistungsstarken Etikettendruck mit hoher Qualität für industrielle Anwendungen.',
+  shortdescription:
+    'Mobiler Etikettendrucker mit Bluetooth und Wi-Fi für flexible, hochwertige Kennzeichnungen direkt am Einsatzort.',
 
-    highlights: [
-      'Hohe Druckleistung',
-      'Robustes Design',
-      'Zuverlässige Industriequalität',
-      'Für anspruchsvolle Umgebungen',
-    ],
+  description:
+    'Der Brady M611 ist ein vielseitiger, tragbarer Thermotransfer-Etikettendrucker mit integrierter Bluetooth- und Wi-Fi-Konnektivität, Touchscreen-Display und automatischem Schneider. Er eignet sich ideal für Kabel-, Leitungs- und Sicherheitskennzeichnungen sowie allgemeine Industrie- und Facility-Etiketten. Mit der Brady Workstation-Software oder mobilen Apps können Anwender Etiketten einfach gestalten und direkt drucken – egal ob im Büro oder vor Ort. Mit internem Speicher und langlebiger Batterie bietet der M611 hohe Produktivität für den täglichen Einsatz.',
 
+  highlights: [
+    'Bluetooth- und Wi-Fi-Konnektivität',
+    'Thermotransfer-Drucktechnologie mit 300 dpi Auflösung',
+    'Automatischer Etikettenschneider',
+    'Touchscreen-Display für einfache Bedienung',
+    'Kompakte, robuste Bauweise für mobile Nutzung',
+    'Speicher für über 1.000 gespeicherte Etiketten',
+    'Drucken von Barcodes, Texten und Grafiken vor Ort',
+    'Breed breed inzetbaar in industrie- und service-bereichen',
+    'Ideal für Kabel-, Leitungs-, Sicherheits- und Produktkennzeichnung',
+  ],
+
+  technicalSpecs: {
+    'Drucktechnologie': 'Thermotransfer',
+    'Farbdruck': 'Einfarbig',
+    'Auflösung': '300 dpi',
+    'Druckgeschwindigkeit': 'Bis zu ca. 50,8 mm/s',
+    'Max. Etikettenbreite': '50,80 mm (2 in.)',
+    'Konnektivität': 'Bluetooth, Wi-Fi, USB',
+    'Display': 'Farb-Touchscreen',
+    'Auto-Cutter': 'Ja',
+    'Interner Speicher': 'Speicher für über 1.000 Etiketten',
+    'Akkutyp': 'Wiederaufladbarer Li-Ion-Akku',
+    'Software': 'Brady Workstation, Express Labels Mobile App',
+    'Einsatzbereiche':
+      'Allgemeine Identifizierung, Facility-Kennzeichnung, Sicherheits- und Kabelkennzeichnung',
   },
+
+  youtubeIds: [
+    'cRdBrTqeHik',
+  ],
+},
+
 
   {
-    name: 'Brady M710 Etikettendrucker',
-    slug: 'brady-m710-etikettendrucker',
-    brand: 'Brady',
-    price: '€4.999',
-    popular: false,
+  name: 'Brady M710 Etikettendrucker',
+  slug: 'brady-m710-etikettendrucker',
+  brand: 'Brady',
+  price: '€5.499',
+  popular: false,
 
-    images: [
-      'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695776/brady_ajv11g.jpg',
-      'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695776/brady_ajv11g.jpg',
-    ],
+  images: [
+    'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695776/brady_ajv11g.jpg',
+    'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695776/brady_ajv11g.jpg',
+    'https://res.cloudinary.com/dnbvuwkcb/image/upload/v1767695776/brady_ajv11g.jpg',
+  ],
 
-    description:
-      'Der Brady M710 ist ein leistungsstarker, tragbarer Etikettendrucker für besonders anspruchsvolle industrielle Einsatzbereiche.',
+  shortdescription:
+    'Leistungsstarker, mobiler Etikettendrucker mit Bluetooth und Wi-Fi für schnelle, professionelle Kennzeichnungen direkt vor Ort.',
 
-    highlights: [
-      'Extrem robust',
-      'Hohe Druckgeschwindigkeit',
-      'Ideal für raue Industrieumgebungen',
-      'Professionelle Kennzeichnungslösungen',
-    ],
+  description:
+    'Der Brady M710 ist ein fortschrittlicher, tragbarer Thermotransfer-Etikettendrucker mit integrierter Bluetooth- und Wi-Fi-Konnektivität. Er bietet hohe Druckgeschwindigkeit, automatischen Schneidevorgang und langlebige Batterieleistung für ganztägige Einsätze. Zusammen mit der Brady Workstation-Software können Anwender Text, Barcodes und Grafiken flexibel gestalten und direkt über Mobilgerät, PC oder Stand-alone-Betrieb drucken.',
 
+  highlights: [
+    'Mobiler tragbarer Etikettendrucker mit Bluetooth und Wi-Fi',
+    'Thermotransfer-Drucktechnologie für langlebige Etiketten',
+    'Hohe Druckgeschwindigkeit (ca. 3 in./s)',
+    'Automatischer Etikettenschneider',
+    'Dauerhafte Batterie für ganztägige Nutzung',
+    'Robustes Gehäuse für raue Arbeitsumgebungen',
+    'Drucken über Smartphone, Tablet oder PC möglich',
+    'Kompatibel mit Brady Workstation Software',
+    'Große Auswahl an Texten, Barcodes und Grafiken',
+    'Ideal für Sicherheits-, Facility- und Produktkennzeichnung',
+  ],
 
+  technicalSpecs: {
+    'Drucktechnologie': 'Thermotransfer',
+    'Farbdruck': 'Einfarbig',
+    'Auflösung': '300 dpi',
+    'Druckgeschwindigkeit': 'Bis zu ca. 3,0 in./Sekunde',
+    'Max. Etikettenbreite': '2 in. (~50,8 mm)',
+    'Konnektivität': 'Bluetooth, Wi-Fi, USB',
+    'Betriebsarten': 'Mobiles Drucken über App oder PC, Stand-alone',
+    'Auto-Cutter': 'Ja',
+    'Batterieleistung': 'Ganztägiges Drucken auf einer Ladung',
+    'Display': 'Farb-LCD Touchscreen',
+    'Speicher': 'Interner Speicher für viele Vorlagen',
+    'Software': 'Brady Workstation Design & Print Pro / Safety & Facility ID Software',
+    'Einsatzbereiche':
+      'Sicherheits- und Facility-Kennzeichnung, Produkt- und Leitungskennzeichnung, Barcode-Etiketten für Industrie und Service',
   },
+
+  youtubeIds: [
+    'cRdBrTqeHik',
+  ],
+},
+
 ];
