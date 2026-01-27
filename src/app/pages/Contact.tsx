@@ -23,26 +23,9 @@ export function Contact() {
 
   const contactInfo = [
   {
-    icon: Phone,
-    title: 'Anfragen',
-    details: [
-      'Telefon: +49 (0) 203 - 75 77 69 00',
-      'E-Mail: info@druckermonster.eu',
-    ],
-  },
-  {
-    icon: Wrench, // 🔧 Technischer Support
-    title: 'Technischer Support',
-    details: [
-      'Telefon: +49 (0) 203 - 75 77 69 00',
-      'E-Mail: support@druckermonster.eu',
-    ],
-  },
-  {
     icon: Package, // 📦 Bestellungen
     title: 'Bestellungen',
     details: [
-      'Telefon: +49 (0) 203 - 75 77 43 21',
       'E-Mail: order@druckermonster.eu',
     ],
   },
