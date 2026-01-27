@@ -1,15 +1,18 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Printer, Menu, X } from 'lucide-react';
+import { ShoppingCart, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { useCart } from '../pages/CartContext'
 
 export function Navbar() {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { items } = useCart()
+
+  const cartCount = items.reduce((sum, item) => sum + item.quantity, 0)
 
 const navLinks = [
   { path: '/', label: 'Startseite' },
   { path: '/products', label: 'Produkte' },
-  { path: '/service', label: 'Service' },
   { path: '/about', label: 'Über uns' },
   { path: '/contact', label: 'Kontakt' },
 ];
@@ -23,9 +26,9 @@ const navLinks = [
            {/* Logo */}
   <Link to="/" className="flex items-center gap-3 group">
     <img
-      src="https://res.cloudinary.com/dyhc4jwuo/image/upload/v1768388782/new_logo_vytclt.png"
+      src="https://res.cloudinary.com/dyhc4jwuo/image/upload/v1769461941/new_logo_1_qtwp3t.png"
       alt="DruckerMonster Logo"
-      className="h-30 -translate-y-1 translate-x-[-55px] "
+      className="h-33 -translate-y-1 translate-x-[-55px] "
     />
   </Link>
 
@@ -50,7 +53,18 @@ const navLinks = [
                   )}
                 </Link>
               ))}
-            </div>
+
+              {/* Cart */}
+            <Link to="/cart" className="relative p-2">
+              <ShoppingCart className="w-7 h-7" />
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-[#5DBB7D] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                  {cartCount}
+                </span>
+              )}
+            </Link>
+          </div>
+      
           </div>
 
           {/* MOBILE BUTTON */}
