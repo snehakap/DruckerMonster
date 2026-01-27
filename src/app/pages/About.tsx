@@ -17,12 +17,6 @@ export function About() {
         'Wir unterstützen unsere Kunden bei der Auswahl des idealen Epson- oder Brady-Druckers – abgestimmt auf Anwendung, Druckvolumen und Branchenanforderungen.',
     },
     {
-      icon: Users,
-      title: 'Kundenorientierter Ansatz',
-      description:
-        'Von der Beratung über die Installation bis hin zum After-Sales-Support steht der langfristige Erfolg unserer Kunden im Mittelpunkt.',
-    },
-    {
       icon: Award,
       title: 'Autorisiert & zuverlässig',
       description:
