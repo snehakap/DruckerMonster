@@ -1,31 +1,44 @@
+import { useState } from 'react'
 import { useCart } from '../pages/CartContext'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { Trash2, Minus, Plus } from 'lucide-react'
-import { Link } from 'react-router-dom'
 import { PayPalButtons } from '@paypal/react-paypal-js'
 
 export function Cart() {
-  const { items, removeFromCart, updateQuantity } = useCart()
+  const { items, removeFromCart, updateQuantity, clearCart } = useCart()
+  const navigate = useNavigate()
 
-  // ✅ Convert "€4.999" → 4999
+  /* ================= DELIVERY ADDRESS STATE ================= */
+  const [address, setAddress] = useState({
+    firstName: '',
+    lastName: '',
+    street: '',
+    houseNumber: '',
+    postalCode: '',
+    city: '',
+    country: 'Deutschland',
+    notes:'',
+    email:'',
+    phone:''
+  })
+
+  const handleAddressChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const { name, value } = e.target
+    setAddress((prev) => ({ ...prev, [name]: value }))
+  }
+
+  /* ================= TOTAL CALCULATION ================= */
   const total = items.reduce((sum, item) => {
     const price = Number(
-      item.price
-        .replace('€', '')
-        .replace('.', '') // remove thousands separator
-        .trim()
+      item.price.replace('€', '').replace('.', '').trim()
     )
     return sum + price * item.quantity
   }, 0)
 
-  // ✅ For PayPal (NO thousands separator)
-  const paypalAmount = total.toFixed(2) // "4999.00"
-
-  // ✅ For UI (German format)
+  const paypalAmount = total.toFixed(2)
   const formattedTotal = `€${total.toLocaleString('de-DE')}`
-
-  const navigate = useNavigate()
-const { clearCart } = useCart()
 
   /* ================= EMPTY CART ================= */
   if (items.length === 0) {
@@ -105,100 +118,191 @@ const { clearCart } = useCart()
         </div>
 
         {/* TOTAL */}
-        <div className="bg-white rounded-2xl shadow-lg p-6 flex justify-between items-center mb-10">
+        <div className="bg-white rounded-2xl shadow-lg p-6 flex justify-between items-center mb-12">
           <p className="text-2xl font-semibold">Gesamt</p>
           <p className="text-3xl font-bold text-[rgb(0,146,82)]">
             {formattedTotal}
           </p>
         </div>
 
-        {/* ACTION BUTTONS */}
-        <div className="grid sm:grid-cols-2 gap-4 mb-12">
-          <Link
-            to="/products"
-            className="px-8 py-4 border-2 border-[rgb(0,146,82)] text-[rgb(0,146,82)] rounded-xl text-center font-semibold hover:bg-emerald-50"
-          >
-            Weiter einkaufen
-          </Link>
-
-          <Link
-            to="/contact"
-            className="px-8 py-4 border-2 border-[rgb(0,146,82)] text-[rgb(0,146,82)] rounded-xl text-center font-semibold hover:bg-emerald-50"
-          >
-            Anfrage senden
-          </Link>
-        </div>
-
-        {/* PAYPAL CHECKOUT */}
-<div className="bg-white rounded-2xl shadow-xl p-10">
-  
-  {/* Title */}
-  <div className="text-center mb-8">
-    <h2 className="text-2xl font-semibold mb-2">
-      Bestellung abschließen
+        {/* DELIVERY DETAILS */}
+<div className="bg-white rounded-2xl shadow-lg p-10 mb-12">
+  <div className="text-center mb-10">
+    <h2 className="text-3xl font-semibold mb-2">
+      Bitte geben Sie Ihre Lieferdaten ein
     </h2>
     <p className="text-gray-600">
-      Schließen Sie Ihre Bestellung ab, indem Sie sicher mit PayPal bezahlen.
+      Diese Informationen werden für den Versand Ihrer Bestellung verwendet.
     </p>
   </div>
 
-  {/* PayPal Button */}
-  <div className="flex justify-center">
-    <div className="w-full max-w-md">
-      <PayPalButtons
-        style={{
-          layout: 'vertical',
-          shape: 'pill',
-          height: 55, // ⬅️ makes it taller
-        }}
-        forceReRender={[paypalAmount]}
+  {/* CONTACT INFO */}
+  <div className="mb-10">
+    <h3 className="text-xl font-semibold mb-4 text-[rgb(0,146,82)]">
+      Kontaktinformationen
+    </h3>
 
-        createOrder={(data, actions) => {
-          return actions.order.create({
-            intent: 'CAPTURE',
-            purchase_units: [
-              {
-                amount: {
-                  currency_code: 'EUR',
-                  value: paypalAmount,
-                },
-              },
-            ],
-          })
-        }}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <input
+        name="firstName"
+        placeholder="Vorname"
+        value={address.firstName}
+        onChange={handleAddressChange}
+        className="input"
+      />
 
-        onApprove={(data, actions) => {
-          return actions.order!.capture().then((details) => {
-            const orderId = details.id
+      <input
+        name="lastName"
+        placeholder="Nachname"
+        value={address.lastName}
+        onChange={handleAddressChange}
+        className="input"
+      />
 
-            try {
-              fetch('/api/save-order', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                  orderId,
-                  amount: paypalAmount,
-                  items,
-                }),
-              })
-            } catch {}
+      <input
+        name="email"
+        placeholder="E-Mail-Adresse"
+        value={address.email}
+        onChange={handleAddressChange}
+        className="input sm:col-span-2"
+      />
 
-            clearCart()
-            navigate('/success')
-          })
-        }}
-
-        onError={(err) => {
-          console.error('PayPal error:', err)
-          alert('Zahlung fehlgeschlagen. Bitte erneut versuchen.')
-        }}
+      <input
+        name="phone"
+        placeholder="Telefonnummer (optional)"
+        value={address.phone}
+        onChange={handleAddressChange}
+        className="input sm:col-span-2"
       />
     </div>
   </div>
 
+  {/* DELIVERY ADDRESS */}
+  <div className="mb-10">
+    <h3 className="text-xl font-semibold mb-4 text-[rgb(0,146,82)]">
+      Lieferadresse
+    </h3>
+
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <input
+        name="street"
+        placeholder="Straße"
+        value={address.street}
+        onChange={handleAddressChange}
+        className="input sm:col-span-2"
+      />
+
+      <input
+        name="houseNumber"
+        placeholder="Hausnr."
+        value={address.houseNumber}
+        onChange={handleAddressChange}
+        className="input"
+      />
+
+      <input
+        name="postalCode"
+        placeholder="PLZ"
+        value={address.postalCode}
+        onChange={handleAddressChange}
+        className="input"
+      />
+
+      <input
+        name="city"
+        placeholder="Stadt"
+        value={address.city}
+        onChange={handleAddressChange}
+        className="input sm:col-span-2"
+      />
+
+      <input
+        name="country"
+        placeholder="Land"
+        value={address.country}
+        onChange={handleAddressChange}
+        className="input sm:col-span-3"
+      />
+    </div>
+  </div>
+
+  {/* DELIVERY NOTES */}
+  <div>
+    <h3 className="text-xl font-semibold mb-4 text-[rgb(0,146,82)]">
+      Hinweise zur Lieferung
+    </h3>
+
+    <textarea
+      name="notes"
+      placeholder="z. B. Abstellort, Klingel, Lieferzeit (optional)"
+      value={address.notes}
+      onChange={(e) =>
+        setAddress((prev) => ({
+          ...prev,
+          notes: e.target.value,
+        }))
+      }
+      rows={4}
+      className="w-full rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition"
+    />
+  </div>
 </div>
 
 
+        {/* PAYPAL CHECKOUT */}
+        <div className="bg-white rounded-2xl shadow-xl p-10">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-semibold mb-2">
+              Bestellung abschließen
+            </h2>
+            <p className="text-gray-600">
+              Sicher bezahlen mit PayPal
+            </p>
+          </div>
+
+          <div className="flex justify-center">
+            <div className="w-full max-w-md">
+              <PayPalButtons
+                style={{ layout: 'vertical', shape: 'pill', height: 55 }}
+                forceReRender={[paypalAmount]}
+                createOrder={(data, actions) =>
+                  actions.order.create({
+                    intent: 'CAPTURE',
+                    purchase_units: [
+                      {
+                        amount: {
+                          currency_code: 'EUR',
+                          value: paypalAmount,
+                        },
+                      },
+                    ],
+                  })
+                }
+                onApprove={(data, actions) =>
+                  actions.order!.capture().then((details) => {
+                    fetch('/api/save-order', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({
+                        orderId: details.id,
+                        amount: paypalAmount,
+                        items,
+                        deliveryAddress: address,
+                      }),
+                    })
+
+                    clearCart()
+                    navigate('/success')
+                  })
+                }
+                onError={(err) => {
+                  console.error(err)
+                  alert('Zahlung fehlgeschlagen')
+                }}
+              />
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
